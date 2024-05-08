@@ -18,7 +18,9 @@ const slides = [
 ]
 
 const arrowLeft = document.querySelector(".arrow_left")
+arrowLeft.addEventListener("click");
 console.log(arrowLeft)
 
 const arrowRight = document.querySelector(".arrow_right")
+arrowRight.addEventListener("click");
 console.log(arrowRight)
