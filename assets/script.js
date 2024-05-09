@@ -18,9 +18,15 @@ const slides = [
 ]
 
 const arrowLeft = document.querySelector(".arrow_left")
-arrowLeft.addEventListener("click");
-console.log(arrowLeft)
-
 const arrowRight = document.querySelector(".arrow_right")
-arrowRight.addEventListener("click");
-console.log(arrowRight)
+const totalSlides = slides.length
+const dots = document.querySelector(".dots");	
+let currentSlide = 0;
+
+arrowLeft.addEventListener("click", function () {
+	console.log("Previous")
+});
+
+arrowRight.addEventListener("click", function () {
+	console.log("Next")
+});
