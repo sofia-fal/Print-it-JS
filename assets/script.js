@@ -20,13 +20,31 @@ const slides = [
 const arrowLeft = document.querySelector(".arrow_left")
 const arrowRight = document.querySelector(".arrow_right")
 const totalSlides = slides.length
-const dots = document.querySelector(".dots");	
+const bannerImg = document.querySelector(".banner-img");
+const bannerText = document.querySelector("#banner p");
+const dotsContainer = document.querySelector(".dots");
 let currentSlide = 0;
 
+updateDots();
+
 arrowLeft.addEventListener("click", () => {
-	console.log("Previous")
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateDots();
 });
 
 arrowRight.addEventListener("click", () => {
-	console.log("Next")
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateDots();
 });
+
+function updateDots() {
+    dotsContainer.innerHTML = "";
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (i === currentSlide) {
+            dot.classList.add("dot_selected");
+        }
+        dotsContainer.appendChild(dot);
+    }
+}
