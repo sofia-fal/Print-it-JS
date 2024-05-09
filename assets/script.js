@@ -23,10 +23,10 @@ const totalSlides = slides.length
 const dots = document.querySelector(".dots");	
 let currentSlide = 0;
 
-arrowLeft.addEventListener("click", function () {
+arrowLeft.addEventListener("click", () => {
 	console.log("Previous")
 });
 
-arrowRight.addEventListener("click", function () {
+arrowRight.addEventListener("click", () => {
 	console.log("Next")
 });
