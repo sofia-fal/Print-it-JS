@@ -26,15 +26,18 @@ const dotsContainer = document.querySelector(".dots");
 let currentSlide = 0;
 
 updateDots();
+updateBanner();
 
 arrowLeft.addEventListener("click", () => {
     currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    updateDots();
+    updateDots()
+	updateBanner();
 });
 
 arrowRight.addEventListener("click", () => {
     currentSlide = (currentSlide + 1) % totalSlides;
-    updateDots();
+    updateDots()
+	updateBanner();
 });
 
 function updateDots() {
@@ -47,4 +50,9 @@ function updateDots() {
         }
         dotsContainer.appendChild(dot);
     }
+}
+
+function updateBanner() {
+    bannerImg.src = "./assets/images/slideshow/" + slides[currentSlide].image;
+    bannerText.innerHTML = slides[currentSlide].tagLine;
 }
