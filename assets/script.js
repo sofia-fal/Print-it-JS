@@ -29,15 +29,23 @@ updateDots();
 updateBanner();
 
 arrowLeft.addEventListener("click", () => {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    updateDots()
-	updateBanner();
+    if (currentSlide === 0) {
+        currentSlide = totalSlides - 1; // Go to the last slide
+    } else {
+        currentSlide--;
+    }
+    updateBanner();
+    updateDots();
 });
 
 arrowRight.addEventListener("click", () => {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateDots()
-	updateBanner();
+    if (currentSlide === totalSlides - 1) {
+        currentSlide = 0; // Go to the first slide
+    } else {
+        currentSlide++;
+    }
+    updateBanner();
+    updateDots();
 });
 
 function updateDots() {
